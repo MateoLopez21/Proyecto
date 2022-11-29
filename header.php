@@ -4,14 +4,14 @@
     </div>
     <nav>
         <ul class="links">
-            <li><a href="">Inicio</a></li>
-            <li><a href="">Deporte</a></li>
-            <li><a href="">Deporte</a></li>
-            <li><a href="">Deporte</a></li>
+            <li><a href="index.php">Inicio</a></li>
+            <li><a href="futbol.php">Fútbol</a></li>
+            <li><a href="tenis.php">Tenis</a></li>
+            <li><a href="baloncesto.php">Baloncesto</a></li>
         </ul>
     </nav>
     <div class="user">
-        <a href="" class="cart fa-sharp fa-solid fa-cart-shopping"></a>
-        <a href="" class="login fa-solid fa-user" ></a>
+        <a href="favoritos.php" class="cart fa-sharp fa-solid fa-heart"></a>
+        <a href="login.php" class="login fa-solid fa-user" ></a>
     </div>
 </header>

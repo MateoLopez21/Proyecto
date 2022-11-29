@@ -1,11 +1,12 @@
 <footer>
     <div>
-        <h3>Contactenos: </h3>
+        <p>
+            Contactenos: <br>
+            3014857291 <br>
+            sportsize@gmail.com
+        </p>
     </div>
     <div>
-        <p>
-            Celular: 3014857291 <br>
-            Correo: fittedly@gmail.com
-        </p>
+
     </div>
 </footer>

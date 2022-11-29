@@ -1,6 +1,6 @@
 <header>
     <div>
-        <h1> NOMBRE DE LA PAGINA </h1>
+        <h1> SportSize </h1>
     </div>
     <nav>
         <ul class="links">

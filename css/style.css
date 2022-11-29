@@ -1,0 +1,33 @@
+body{
+    background: rgb(0,0,0);
+    background: linear-gradient(45deg, rgba(0,0,0,1) 3%, rgba(25,117,30,1) 54%, rgba(0,0,0,1) 96%);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color: #fff;
+}
+
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 85px;
+    max-width: 100vw;
+    padding: 20px 10%;
+    border: 1px solid red;
+}
+header nav .links{
+    list-style: none;
+}
+
+header nav .links li{
+    display: inline-block;
+    padding: 0 20px;
+}
+
+header nav .links li a{
+    border-bottom: 3px solid #ceff25;
+    height: 120px;
+    text-decoration: none;
+    font-family: 'EP Stellari', sans-serif;
+    color: #fff;
+}

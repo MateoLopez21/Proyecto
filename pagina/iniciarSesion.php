@@ -18,7 +18,8 @@
     <title>Iniciar Sesión</title>
 </head>
 <body>
-    <?php require './header.php' ?>
+    <?php require './header.php';
+    ?>
 
     <div class="container">
         <div method="POST" class="formulario">

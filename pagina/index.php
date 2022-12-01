@@ -13,8 +13,7 @@
     <?php require './header.php' ?>
 
     <aside class="container-titulo">
-        <div class="titulo">
-            SportSize
+        <div class="titulo" id="title">
         </div>
         <div class="resumen">
             Somos una empresa dedicada a la venta y/o dustribución de artículos deportivos pertenecientes al fútbol, tenis y baloncesto.
@@ -49,5 +48,7 @@
 
 
     <?php require './footer.php' ?>
+
+    <script src="../js/main.js"></script>
 </body>
 </html>

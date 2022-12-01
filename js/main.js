@@ -11,4 +11,4 @@ function writeMessage(){
     // }
 }
 
-setInterval(writeMessage, 100);
+setInterval(writeMessage, 200);

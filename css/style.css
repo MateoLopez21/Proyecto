@@ -22,7 +22,13 @@ header{
     color: #fff;
 }
 
-header div h1{
+header div a{
+    text-decoration: none;
+    outline: none;
+    color: #fff;
+}
+
+header div a h1{
     font-family: 'EP Stellari', sans-serif;
 }
 
@@ -108,7 +114,8 @@ header nav .links li a{
 }
 
 footer{
-    align-self: flex-end;
+    position: absolute;
+    bottom: 0;
     display: grid;
     grid-template-columns: 1fr 1fr;
     align-content: center;

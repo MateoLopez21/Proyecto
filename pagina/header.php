@@ -1,13 +1,12 @@
 <header>
     <div>
-        <h1> SportSize </h1>
+        <a href="./index.php"><h1> SportSize </h1></a>
+        
     </div>
     <nav>
         <ul class="links">
             <li><a href="index.php">Inicio</a></li>
-            <li><a href="futbol.php">Fútbol</a></li>
-            <li><a href="tenis.php">Tenis</a></li>
-            <li><a href="baloncesto.php">Baloncesto</a></li>
+            <li><a href="tienda.php">Tienda</a></li>
         </ul>
     </nav>
     <div class="user">

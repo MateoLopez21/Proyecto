@@ -1,3 +1,29 @@
+<?php
+    require("../conexion/bd.php");
+    $message = "";
+    if (!empty($_POST['usuario']) && !empty($_POST['password'])){
+        $usuario = $_POST['usuario'];
+        $querySelect = $conn->prepare("SELECT * FROM usuario WHERE usuario = :usuario");
+        $execute = $querySelect->execute(['usuario' => $usuario]);
+        $results = $querySelect->fetch();
+        if(!empty($results)){
+            if($results['usuario'] == $_POST['usuario']){
+                $message = "El usuario ya existe.";
+            }
+        }else{
+                $sql = "INSERT INTO usuario (usuario, password) VALUES (:usuario, :password);";
+                $stmt = $conn->prepare($sql);
+                $stmt->bindParam(':usuario', $_POST['usuario']);
+                $stmt->bindParam(':password', $_POST['password']);
+
+                if ($stmt->execute()) {
+                    $message = "Usuario creado con éxito";
+                } else {
+                    $message = "Lo sentimos, error al registrarse.";
+                }
+            }
+        }
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,36 +38,30 @@
 </head>
 <body>
     <?php require './header.php' ?>
+
+        
+    
+
+
     <div class="container">
-        <form action="" method="post" class=" d-block text-center">
-            <h2 class="titulo">Regristrar</h2>
+        <form action="registrarse.php" method="post" class=" d-block text-center">
+                <?php
+                if (!empty($message)) {
+                    echo "<p class='alert'> $message </p>";
+                }
+                ?> 
+            <h2 class="titulo">Regristrarse</h2>
             <div>
-                <label for="" class="form-label">Número de Documento</label> <br>
-                <input type="number" class="form-control" name="documento" > <br>
-                <label for="" class="form-label">Nombres</label> <br>
-                <input type="text" class="form-control" name="nombres" > <br>
-                <label for="" class="form-label">Apellidos</label> <br>
-                <input type="text" class="form-control" name="apellidos" > <br>
-                <label for="" class="form-label">Dirección</label> <br>
-                <input type="text" class="form-control" name="direccion" > <br>
-                <label for="" class="form-label">Correo Electronico</label> <br>
-                <input type="email" class="form-control" name="correo" include="@" > <br>
-                <label for="" class="form-label">Celular</label> <br>
-                <input type="number" class="form-control" name="celular"> <br>
-                <label for="" class="form-label">Contraseña</label> <br>
-                <input type="password" class="form-control" name="contrasena" > <br>
-                <input type="submit" value="Crear Cuenta" class="btn btn-primary" onclick="window.location='./registrarse.php'" name="registro" >
+                <label for="usuario" class="form-label">Usuario</label> <br>
+                <input type="text" class="form-control" name="usuario" autocomplete="off" required> <br>
+                <label for="password" class="form-label">Contraseña</label> <br>
+                <input type="password" class="form-control" name="password" autocomplete="off" required> <br>
+                <input type="submit" value="Crear Cuenta" class="btn btn-primary" name="registro" >
             </div>
         </form>
-        <?php
-            // if(isset($_POST['documento'])&& isset($_POST['nombres'])&& isset($_POST['apellidos'])&& isset($_POST['direccion'])&& isset($_POST['correo'])&& isset($_POST['celular'])&& isset($_POST['contrasena']))
-
-            require_once"../conexion/guardar.php";
-            
-                // include("../conexion/conexionBD.php");
-                // include("../conexion/controladorRegistrarse.php");
-        ?>
     </div>    
+
+    <?php require './footer.php' ?>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" 
     crossorigin="anonymous"></script>
 </body>

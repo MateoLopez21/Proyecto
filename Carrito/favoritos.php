@@ -2,7 +2,7 @@
     session_start();
 
 
-    //Aquie mpieza el carrito
+    //Aqui empieza el carrito
     if(isset($_SESSION['carrito']) || isset($_POST['titulo'])){
         if(isset($_SESSION['carrito'])){
             $favoritos=$_SESSION['carrito'];

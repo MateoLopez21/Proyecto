@@ -42,14 +42,13 @@ header nav .links li a{
     color: #fff;
 }
 
-.user .login{
-    margin-left: 12px;
-}
+
 
 .user a{
     text-decoration: none;
     color: #fff;
     font-size: 32px;
+    margin: 12px;
 }
 
 
@@ -155,8 +154,10 @@ input[type='submit']{
     color: #ffff;
     width: calc(80% - 20px);
     margin-top: 22px;
+    margin-bottom: 22px;
     border: none;
 }
+
 .alerta{
     text-align: center;
     color: red;

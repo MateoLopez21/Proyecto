@@ -18,6 +18,8 @@
 
                 if ($stmt->execute()) {
                     $message = "Usuario creado con éxito";
+
+                    header('Location: ./iniciarSesion.php');
                 } else {
                     $message = "Lo sentimos, error al registrarse.";
                 }

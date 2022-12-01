@@ -6,7 +6,6 @@
 @import url('https://fonts.cdnfonts.com/css/ep-stellari');
 
 body{
-    background: rgb(0,0,0);
     background: linear-gradient(45deg, rgba(0,0,0,1) 3%, rgba(25,117,30,1) 54%, rgba(0,0,0,1) 96%);
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -20,7 +19,11 @@ header{
     height: 85px;
     max-width: 100vw;
     padding: 20px 10%;
+/* <<<<<<< HEAD
     color: #ffff;
+=======
+    color: #fff;
+>>>>>>> 2606985577f3968a0d00174ae2a3d513b3cfae22 */
 }
 
 header div h1{
@@ -43,14 +46,13 @@ header nav .links li a{
     color: #fff;
 }
 
-.user .login{
-    margin-left: 12px;
-}
+
 
 .user a{
     text-decoration: none;
     color: #fff;
     font-size: 32px;
+    margin: 12px;
 }
 
 
@@ -74,7 +76,7 @@ header nav .links li a{
     font-family: 'Corpid Heavy', sans-serif;
 }
 
-.container{
+.container-slider{
     display: flex;
     justify-content: flex-end;
     margin: 50px 20px;
@@ -110,8 +112,7 @@ header nav .links li a{
 }
 
 footer{
-    position: absolute;
-    bottom: 0;
+    align-self: flex-end;
     display: grid;
     grid-template-columns: 1fr 1fr;
     align-content: center;
@@ -119,8 +120,15 @@ footer{
     height: 100px;
     color: #fff;
     text-align: center;
-/* <<<<<<< HEAD */
-    border: 1px solid red;
+    color: #fff;
+}
+
+footer div i{
+    font-size: 30px;
+}
+
+footer div i:hover{
+    cursor: pointer;
 }
 
 .container{
@@ -137,6 +145,7 @@ form{
     margin: calc(25% + 100px);
     margin-top: 70px;
     padding-top:28px;
+    width: 700px;
 }
 input{
     width: clac(100% - 20px);
@@ -148,10 +157,12 @@ input{
 input[type='submit']{
     background-color: #48e;
     color: #ffff;
-    width: calc(80% - 20px);
+    width: calc(50% - 20px);
     margin-top: 22px;
+    margin-bottom: 22px;
     border: none;
 }
+
 .alerta{
     text-align: center;
     color: red;

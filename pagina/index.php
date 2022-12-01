@@ -22,7 +22,7 @@
     </aside>
 
 
-    <div class="container">
+    <div class="container-slider">
         <div class="slider">
             <ul>
                 <li>

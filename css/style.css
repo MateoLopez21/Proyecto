@@ -72,7 +72,7 @@ header nav .links li a{
     font-family: 'Corpid Heavy', sans-serif;
 }
 
-.container{
+.container-slider{
     display: flex;
     justify-content: flex-end;
     margin: 50px 20px;
@@ -108,8 +108,7 @@ header nav .links li a{
 }
 
 footer{
-    position: absolute;
-    bottom: 0;
+    align-self: flex-end;
     display: grid;
     grid-template-columns: 1fr 1fr;
     align-content: center;
@@ -141,6 +140,7 @@ form{
     margin: calc(25% + 100px);
     margin-top: 70px;
     padding-top:28px;
+    width: 700px;
 }
 input{
     width: clac(100% - 20px);
@@ -152,7 +152,7 @@ input{
 input[type='submit']{
     background-color: #48e;
     color: #ffff;
-    width: calc(80% - 20px);
+    width: calc(50% - 20px);
     margin-top: 22px;
     margin-bottom: 22px;
     border: none;

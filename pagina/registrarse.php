@@ -11,9 +11,12 @@
                 $message = "El usuario ya existe.";
             }
         }else{
-                $sql = "INSERT INTO usuario (usuario, password) VALUES (:usuario, :password);";
+                $sql = "INSERT INTO usuario (usuario, email, direccion, telefono, password ) VALUES (:usuario, :email, :direccion, :telefono, :password);";
                 $stmt = $conn->prepare($sql);
                 $stmt->bindParam(':usuario', $_POST['usuario']);
+                $stmt->bindParam(':email', $_POST['email']);
+                $stmt->bindParam(':direccion', $_POST['direccion']);
+                $stmt->bindParam(':telefono', $_POST['telefono']);
                 $stmt->bindParam(':password', $_POST['password']);
 
                 if ($stmt->execute()) {
@@ -56,6 +59,12 @@
             <div>
                 <label for="usuario" class="form-label">Usuario</label> <br>
                 <input type="text" class="form-control" name="usuario" autocomplete="off" required> <br>
+                <label for="usuario" class="form-label">Correlo Electrónico</label> <br>
+                <input type="text" class="form-control" name="email" autocomplete="off" required> <br>
+                <label for="usuario" class="form-label">Direccion</label> <br>
+                <input type="text" class="form-control" name="direccion" autocomplete="off" required> <br>
+                <label for="usuario" class="form-label">Teléfono</label> <br>
+                <input type="text" class="form-control" name="telefono" autocomplete="off" required> <br>
                 <label for="password" class="form-label">Contraseña</label> <br>
                 <input type="password" class="form-control" name="password" autocomplete="off" required> <br>
                 <input type="submit" value="Crear Cuenta" class="btn btn-primary" name="registro" >

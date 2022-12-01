@@ -59,7 +59,7 @@
                 <input type="text" class="form-control" name="usuario"> <br>
                 <label for="" class="form-label">Contraseña</label> <br>
                 <input type="password" name="password" class="form-control"> <br>
-                <input type="submit" value="Iniciar Sesión" class="btn btn-primary" >
+                <input type="submit" value="Iniciar Sesión" class="btn btn-primary" > <br>
                 <input type="button" value="Crear Cuenta" class="btn btn-primary" onclick="window.location='./registrarse.php'">
             </form>
         </div>

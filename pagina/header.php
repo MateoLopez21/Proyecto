@@ -14,6 +14,6 @@
         <a href="favoritos.php" class="cart fa-sharp fa-solid fa-heart"></a>
         <a href="vistaUsuario.php" class="login fa-solid fa-user" ></a>
         <a href="iniciarSesion.php" class="fa-solid fa-arrow-right-to-bracket"></a>
-        <a href="logout.php" class="fa-solid fa-right-from-bracket" alt="Cerrar Sesión"></a>
+        <a href="logout.php" class="fa-solid fa-right-from-bracket" ></a>
     </div>
 </header>

@@ -2,7 +2,8 @@
     session_start();
 
     if (isset($_SESSION['user_id'])) {
-        header('Location: ./index.php');
+        echo "<script> alert('Ya iniciaste sesión, vuelve al inicio');
+        window.location='../pagina/iniciarSesion.php'</script>";
     }
 
     require '../conexion/bd.php';

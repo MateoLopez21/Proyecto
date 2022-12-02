@@ -1,6 +1,6 @@
 <header>
     <div>
-        <a href="./index.php"><h1> SportSize </h1></a>
+        <a href="../pagina/index.php"><h1> SportSize </h1></a>
     </div>
     <nav>
         <ul class="links">
@@ -12,6 +12,8 @@
     </nav>
     <div class="user">
         <a href="favoritos.php" class="cart fa-sharp fa-solid fa-heart"></a>
-        <a href="login.php" class="login fa-solid fa-user" ></a>
+        <a href="../Carrito/vistaUsuario.php" class="login fa-solid fa-user" ></a>
+        <a href="../pagina/iniciarSesion.php" class="fa-solid fa-arrow-right-to-bracket"></a>
+        <a href="../pagina/logout.php" class="fa-solid fa-right-from-bracket" ></a>
     </div>
 </header>

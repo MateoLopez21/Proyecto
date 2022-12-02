@@ -63,7 +63,7 @@ header nav .links li a{
 
 
 .container-titulo{
-    margin-top: 50px;
+    margin-top: 250px;
     float: left;
     height: 100%;
     width: 300px;
@@ -185,6 +185,11 @@ input[type='submit']{
 
 .vista{
     text-align: center;
+    color: #000;
+}
+
+.vista input[type='submit']:hover{
+    cursor: pointer;
 }
 
 #eliminar{

@@ -49,7 +49,7 @@
 
 
     <div class="container">
-        <form action="registrarse.php" method="post" class=" d-block text-center">
+        <form action="registrarse.php" method="post" class=" d-block text-center" was-validated>
                 <?php
                 if (!empty($message)) {
                     echo "<p class='alert'> $message </p>";
@@ -57,16 +57,16 @@
                 ?> 
             <h2 class="titulo">Regristrarse</h2>
             <div>
-                <label for="usuario" class="form-label">Usuario</label> <br>
-                <input type="text" class="form-control" name="usuario" autocomplete="off" required> <br>
-                <label for="usuario" class="form-label">Correlo Electrónico</label> <br>
-                <input type="text" class="form-control" name="email" autocomplete="off" required> <br>
-                <label for="usuario" class="form-label">Direccion</label> <br>
-                <input type="text" class="form-control" name="direccion" autocomplete="off" required> <br>
-                <label for="usuario" class="form-label">Teléfono</label> <br>
-                <input type="text" class="form-control" name="telefono" autocomplete="off" required> <br>
-                <label for="password" class="form-label">Contraseña</label> <br>
-                <input type="password" class="form-control" name="password" autocomplete="off" required> <br>
+                <label for="usuario" class="form-label">Usuario</label>
+                <input type="text" class="form-control" name="usuario" autocomplete="off" required> 
+                <label for="usuario" class="form-label">Correlo Electrónico</label> 
+                <input type="email" class="form-control" name="email" autocomplete="off" required> 
+                <label for="usuario" class="form-label">Direccion</label> 
+                <input type="text" class="form-control" name="direccion" autocomplete="off" required> 
+                <label for="usuario" class="form-label">Teléfono</label> 
+                <input type="text" class="form-control" name="telefono" autocomplete="off" required> 
+                <label for="password" class="form-label">Contraseña</label> 
+                <input type="password" class="form-control" name="password" autocomplete="off" required> 
                 <input type="submit" value="Crear Cuenta" class="btn btn-primary" name="registro" >
             </div>
         </form>
@@ -75,5 +75,6 @@
     <?php require './footer.php' ?>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" 
     crossorigin="anonymous"></script>
+    <script src="../js/main.js"></script>
 </body>
 </html>

@@ -1,5 +1,18 @@
 <?php
     session_start();
+    require '../conexion/bd.php';
+
+    
+    if(!isset($_SESSION['user_id'])){
+        echo "<script> alert('No has iniciado sesión');
+        window.location='../pagina/iniciarSesion.php'</script>";
+    }else {
+        $querySelect = $conn->prepare("SELECT * FROM usuario WHERE idUsuario = :idUsuario");
+        $execute = $querySelect->execute(['idUsuario' => $_SESSION['user_id']]);
+        $results = $querySelect->fetchAll();
+    }
+
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -16,28 +29,28 @@
 
 <body>
     <?php require '../pagina/header.php' ?>
-    <fieldset>
-        <form action="./factura.php" method="post" was-validated class="vista">
-            <legend><h2 class="titulo">Datos Usuario</h2></legend>
+        <form action="../conexion/actualizar.php" method="post" was-validated class="vista">
+            <?php foreach ($results as $key => $value) { ?>
+            <h2 class="titulo">Datos Usuario</h2>
             <div>
                 <label for="" class="form-label">Nombre De Usuario</label> <br>
-                <input type="text" class="form-control" name="usuario" value="usuario"> <br>
+                <input type="text" class="form-control" name="usuario" value="<?php echo $value['usuario']; ?>"> <br>
                 <label for="" class="form-label">Correo Electronico</label> <br>
-                <input type="email" class="form-control" name="email" value="email"> <br>
+                <input type="email" class="form-control" name="email" value="<?php echo $value['email']; ?>"> <br>
                 <label for="" class="form-label">Dirección</label> <br>
-                <input type="text" class="form-control" name="direccion" value="direccion"> <br>
+                <input type="text" class="form-control" name="direccion" value="<?php echo $value['direccion']; ?>"> <br>
                 <label for="" class="form-label">Celular</label> <br>
-                <input type="number" class="form-control" name="telefono" value="telefono"> <br>
+                <input type="number" class="form-control" name="telefono" value="<?php echo $value['telefono']; ?>"> <br>
                 <label for="" class="form-label">Contraseña</label> <br>
-                <input type="password" class="form-control" name="password" value="password"> <br>
+                <input type="text" class="form-control" name="password" value="<?php echo $value['password']; ?>"> <br>
                 <input type="submit" value="Guardar Cambios" class="btn btn-primary" name="cambios" >
                 </div>
-                <input type="submit" value="Eliminar Cuenta" class="btn btn-danger" id="eliminar" >
+                <input type="submit" value="Eliminar Cuenta" class="btn btn-danger" id="eliminar" name="eliminar" onclick="this.form.action = '../conexion/eliminar.php'">
+                <?php } ?>
         </form>
-    </fieldset>  
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" 
     crossorigin="anonymous"></script>
-
-    <!-- <?php require '../pagina/footer.php' ?> -->
+    
+    <?php require '../pagina/footer.php'; ?>
 </body>
 </html>

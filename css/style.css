@@ -184,6 +184,24 @@ input[type='submit']{
     background-color: red;
 }
 
+/* .container-tienda{
+    padding: 50px 20px;
+    background-color: #ededed;
+    margin: calc(25% + 100px);
+    margin-top: 70px;
+    padding-top:28px; */
+/* } */
+
+img.grandes{
+    width: 200px;
+    height: 200px;
+}
+
+.tienda{
+    color: #000;
+
+}
+
 
 @keyframes cambio{
     0% {margin-left: 0;}

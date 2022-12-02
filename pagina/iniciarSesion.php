@@ -3,7 +3,7 @@
 
     if (isset($_SESSION['user_id'])) {
         echo "<script> alert('Ya iniciaste sesión, vuelve al inicio');
-        window.location='../pagina/iniciarSesion.php'</script>";
+        window.location='../pagina/index.php'</script>";
     }
 
     require '../conexion/bd.php';
@@ -48,7 +48,7 @@
 
     <div class="container">
         <div class="formulario">
-            <form action="iniciarSesion.php" method="post" class=" mx-auto d-block text-center">
+            <form action="iniciarSesion.php" method="post" class=" mx-auto d-block text-center" was-validated>
                 <?php 
                     if (!empty($message)) {
                         echo "<p> $message </p>";

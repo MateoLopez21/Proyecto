@@ -1,4 +1,5 @@
-<footer>
+<div class="footer">
+    <footer>
     <div>
         <p>
             Contactenos: <br>
@@ -11,4 +12,5 @@
         <i class="fa-brands fa-twitter"></i>
         <i class="fa-brands fa-instagram"></i>
     </div>
-</footer>
+    </footer>
+</div>

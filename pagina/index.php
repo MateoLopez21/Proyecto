@@ -1,3 +1,7 @@
+<?php 
+    session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,7 +11,7 @@
     <link rel="stylesheet" href="../css/style.css" type="text/css">
     <link rel="stylesheet" href="../css/normalize.css" type="text/css">
     <script src="https://kit.fontawesome.com/f57beba7b3.js" crossorigin="anonymous"></script>
-    <title>Document</title>
+    <title>SportSize</title>
 </head>
 <body>
     <?php require './header.php' ?>

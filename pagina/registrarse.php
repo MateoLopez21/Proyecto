@@ -41,7 +41,8 @@
     <script src="https://kit.fontawesome.com/f57beba7b3.js" crossorigin="anonymous"></script>
     <title>Registrarse</title>
 </head>
-<body>
+<body style="
+    overflow-y: hidden;">
     <?php require './header.php' ?>
 
         

@@ -16,7 +16,7 @@ if(isset($_POST['eliminar'])){
     }else{
         echo "<script>
         alert('Error al eliminar el usuario.')
-        window.location.href='../pagina/index.php';
+        window.location.href='../pagina/vistaUsuario.php';
         </script>";
     }
 }

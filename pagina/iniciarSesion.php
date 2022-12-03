@@ -9,13 +9,17 @@
     require '../conexion/bd.php';
 
     if (!empty($_POST['usuario']) && !empty($_POST['password'])) {
+        $usuario = $_POST['usuario'];
+        $pwd = $_POST['password'];
+        $usuario = htmlentities($usuario);
+        $pwd = htmlentities($pwd);
         $records = $conn->prepare('SELECT idUsuario, usuario, password FROM usuario WHERE usuario=:usuario;');
-        $records->bindParam(':usuario', $_POST['usuario']);
+        $records->bindParam(':usuario', $usuario);
         $records->execute();
         $results = $records->fetch(PDO::FETCH_ASSOC);
 
         $message = "";
-        if (!empty($results) && $results['password'] == $_POST['password']) {
+        if (!empty($results) && $results['password'] == $pwd) {
             // Almaenar el id del usuario como user_id
             $_SESSION['user_id'] = $results['idUsuario'];
 

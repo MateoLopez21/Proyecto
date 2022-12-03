@@ -3,29 +3,44 @@
     $message = "";
     if (!empty($_POST['usuario']) && !empty($_POST['password'])){
         $usuario = $_POST['usuario'];
+        $usuario = htmlentities($usuario);
         $querySelect = $conn->prepare("SELECT * FROM usuario WHERE usuario = :usuario");
         $execute = $querySelect->execute(['usuario' => $usuario]);
         $results = $querySelect->fetch();
         if(!empty($results)){
-            if($results['usuario'] == $_POST['usuario']){
+            if($results['usuario'] == $usuario){
                 $message = "El usuario ya existe.";
+                echo "<script> alert('".$message."')
+                </script>";
             }
         }else{
-                $sql = "INSERT INTO usuario (usuario, email, direccion, telefono, password ) VALUES (:usuario, :email, :direccion, :telefono, :password);";
-                $stmt = $conn->prepare($sql);
-                $stmt->bindParam(':usuario', $_POST['usuario']);
-                $stmt->bindParam(':email', $_POST['email']);
-                $stmt->bindParam(':direccion', $_POST['direccion']);
-                $stmt->bindParam(':telefono', $_POST['telefono']);
-                $stmt->bindParam(':password', $_POST['password']);
+            $user = $_POST['usuario'];
+            $user = htmlentities($user);
+            $email = $_POST['email'];
+            $email = htmlentities($email);
+            $direccion = $_POST['direccion'];
+            $direccion = htmlentities($direccion);
+            $tel = $_POST['telefono'];
+            $tel = htmlentities($tel);
+            $pwd = $_POST['password'];
+            $pwd = htmlentities($pwd);
+            $sql = "INSERT INTO usuario (usuario, email, direccion, telefono, password ) VALUES (:usuario, :email, :direccion, :telefono, :password);";
+            $stmt = $conn->prepare($sql);
+            $stmt->bindParam(':usuario', $user);
+            $stmt->bindParam(':email', $email);
+            $stmt->bindParam(':direccion', $direccion);
+            $stmt->bindParam(':telefono', $tel);
+            $stmt->bindParam(':password', $pwd);
 
-                if ($stmt->execute()) {
-                    $message = "Usuario creado con éxito";
-
-                    header('Location: ./iniciarSesion.php');
-                } else {
-                    $message = "Lo sentimos, error al registrarse.";
-                }
+            if ($stmt->execute()) {
+                $message = "Usuario creado con éxito";
+                echo "<script> alert('".$message."')
+                window.location='../pagina/iniciarSesion.php'
+                </script>";
+            } else {
+                $message = "Lo sentimos, error al registrarse.";
+                echo "<script> alert('".$message."')</script>";
+            }
             }
         }
 ?>
@@ -51,11 +66,6 @@
 
     <div class="container">
         <form action="registrarse.php" method="post" class=" d-block text-center" was-validated>
-                <?php
-                if (!empty($message)) {
-                    echo "<p class='alert'> $message </p>";
-                }
-                ?> 
             <h2 class="titulo">Regristrarse</h2>
             <div>
                 <label for="usuario" class="form-label">Usuario</label>

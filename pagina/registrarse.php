@@ -66,7 +66,7 @@
 
     <div class="container">
         <form action="registrarse.php" method="post" class=" d-block text-center" was-validated>
-            <h2 class="titulo">Regristrarse</h2>
+            <h2 class="titulo">Registrarse</h2>
             <div>
                 <label for="usuario" class="form-label">Usuario</label>
                 <input type="text" class="form-control" name="usuario" autocomplete="off" required> 

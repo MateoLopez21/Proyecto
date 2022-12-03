@@ -30,7 +30,8 @@
     <title>Factura</title>
 </head>
 
-<body>
+<body style="
+    overflow-y: hidden;">
     <?php require '../pagina/header.php' ?>
     <div class="container">
         <form action="" method="post" class=" d-block text-center" was-validated>
